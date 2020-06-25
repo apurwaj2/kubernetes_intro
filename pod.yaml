@@ -1,9 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: first-project
+  name: pod-example
+  namespace: assignment
 spec:
   containers:
-  - name: first-container
+  - name: single-pod-container
     image: apurwaj2/myproject
     command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]

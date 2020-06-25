@@ -1,7 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: nginx-stateful-service
+  namespace: assignment
   labels:
     app: nginx1
 spec:
@@ -18,12 +19,13 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: nginx-statefulset
+  namespace: assignment
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: nginx1
-  serviceName: "nginx-service"
+  serviceName: "nginx-stateful-service"
   template:
     metadata:
       labels:

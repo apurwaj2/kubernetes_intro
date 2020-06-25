@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: my-daemonset
-  namespace: default
+  namespace: assignment
 spec:
   selector:
     matchLabels:
