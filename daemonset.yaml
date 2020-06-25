@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-daemonset
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      name: daemonset-pod
+  template:
+    metadata:
+      labels:
+        name: daemonset-pod
+    spec:
+      containers:
+      - name: nginx-pod-web
+        image: apurwaj2/daemonserver
+        ports:
+        - containerPort: 80
+          hostPort: 80
+  
